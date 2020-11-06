@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="etiqueta_app_size">40sp</dimen>
+    <dimen name="margin_top_texto">15dp</dimen>
+    <dimen name="margin_top_btn">50dp</dimen>
+    <dimen name="etiqueta_btn">20sp</dimen>
+    <dimen name="paddingToolbar">10dp</dimen>
+    <dimen name="nombreGrande">20sp</dimen>
+</resources>
