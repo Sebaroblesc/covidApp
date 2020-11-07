@@ -8,11 +8,20 @@ public class Paciente implements Serializable {
     private String rut;
     private String nombre;
     private String apellido;
+
+    public int getSintomas() {
+        return sintomas;
+    }
+
+    public int getTos() {
+        return tos;
+    }
+
     private String fechaExamen;
     private String areaTrabajo;
-    private boolean sintomas;
+    private int sintomas;
     private int temperatura;
-    private boolean tos;
+    private int tos;
     private int presion;
 
     public int getId() {
@@ -63,11 +72,11 @@ public class Paciente implements Serializable {
         this.areaTrabajo = areaTrabajo;
     }
 
-    public boolean isSintomas() {
+    public int isSintomas() {
         return sintomas;
     }
 
-    public void setSintomas(boolean sintomas) {
+    public void setSintomas(int sintomas) {
         this.sintomas = sintomas;
     }
 
@@ -79,11 +88,11 @@ public class Paciente implements Serializable {
         this.temperatura = temperatura;
     }
 
-    public boolean isTos() {
+    public int isTos() {
         return tos;
     }
 
-    public void setTos(boolean tos) {
+    public void setTos(int tos) {
         this.tos = tos;
     }
 

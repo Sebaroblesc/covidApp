@@ -3,4 +3,12 @@
     <string name="nombre">Nombre</string>
     <string name="password">Password</string>
     <string name="iniciarSesion">Iniciar Sesión</string>
+    <string name="rut_paciente">Rut Paciente</string>
+    <string name="nombre_paciente">Nombre Paciente</string>
+    <string name="apellido_paciente">Apellido Paciente</string>
+    <string name="fecha">Fecha</string>
+    <string name="tiene_sintomas">¿Tiene Sintomas?</string>
+    <string name="temperatura">Temperatura</string>
+    <string name="tiene_tos">¿Tiene tos?</string>
+    <string name="presi_n_arterial">Presión arterial</string>
 </resources>

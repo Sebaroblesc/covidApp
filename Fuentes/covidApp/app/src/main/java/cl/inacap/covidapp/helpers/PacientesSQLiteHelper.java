@@ -9,11 +9,16 @@ import androidx.annotation.Nullable;
 public class PacientesSQLiteHelper extends SQLiteOpenHelper {
 
     private final String sqlCreate = "CREATE TABLE " +
-            "pacientes(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL" +
+            "pacientes(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL " +
+            ",rut INTEGER" +
             ",nombre TEXT" +
-            ",descripcion TEXT" +
-            ",foto TEXT" +
-            ",precio INTEGER)";
+            ",apellido TEXT" +
+            ",fechaExamen TEXT" +
+            ",areaTrabajo TEXT" +
+            ",sintomas INTEGER" +
+            ",temperatura INTEGER" +
+            ",tos INTEGER" +
+            ",presion INTEGER)";
 
 
 
@@ -26,11 +31,12 @@ public class PacientesSQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
+        db.execSQL(sqlCreate);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL("DROP TABLE IF EXISTS pacientes");
+        db.execSQL(sqlCreate);
     }
 }

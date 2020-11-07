@@ -35,9 +35,9 @@ public class PacientesDAOSQLite implements PacientesDAO {
                         p.setApellido(c.getString(3));
                         p.setFechaExamen(c.getString(4));
                         p.setAreaTrabajo(c.getString(5));
-                    //    p.setSintomas(c.getInt(6));
+                        p.setSintomas(c.getInt(6));
                         p.setTemperatura(c.getInt(7));
-                  //      p.setTos(c.getInt(8));
+                        p.setTos(c.getInt(8));
                         p.setPresion(c.getInt(9));
                         pacientes.add(p);
                     }while(c.moveToNext());
@@ -55,7 +55,12 @@ public class PacientesDAOSQLite implements PacientesDAO {
     @Override
     public Paciente save(Paciente p) {
         SQLiteDatabase writer = this.pacHelper.getWritableDatabase();
-        String sql = String.format("INSERT INTO pacientes(rut,nombre,apellido,fechaExamen,areaTrabajo,sintomas,temperatura,tos,presion"+
-                " VALUES('%s','%s','%s','%s','%s','%s',)"
+        String sql = String.format("INSERT INTO pacientes(rut,nombre,apellido,fechaExamen,areaTrabajo,sintomas,temperatura,tos,presion)" +
+                " VALUES ('%s','%s','%s','%s','%s','%d','%d','%d','%d')", p.getRut(), p.getNombre(),p.getApellido(),p.getFechaExamen(),
+                        p.getAreaTrabajo(),p.getSintomas(),p.getTemperatura(),p.getTos(),p.getPresion());
+
+        writer.execSQL(sql);
+         writer.close();
+        return p;
     }
 }
