@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:background="@color/colorPrimary">
+    tools:context=".MainActivity">
 
     <include
         layout="@layout/toolbar"
@@ -14,7 +13,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp">
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -22,6 +22,7 @@
 
 
     <TextView
+        android:textColor="@color/primary_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/rut_paciente"
@@ -30,10 +31,12 @@
         ></TextView>
     <EditText
         android:id="@+id/rut_pac_txt_cr"
+        android:textColor="@color/primary_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         ></EditText>
     <TextView
+        android:textColor="@color/primary_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/nombre_paciente"
@@ -41,17 +44,20 @@
         android:layout_marginTop="@dimen/margin_top_texto"
         ></TextView>
     <EditText
+        android:textColor="@color/primary_text"
         android:id="@+id/nombre_pac_txt_cr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         ></EditText>
     <TextView
+        android:textColor="@color/primary_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/apellido_paciente"
         android:layout_marginTop="@dimen/margin_top_texto"
         android:textSize="@dimen/nombreGrande"></TextView>
     <EditText
+        android:textColor="@color/primary_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/apellido_pac_txt_cr"></EditText>
@@ -63,18 +69,23 @@
 
         <Button
             android:id="@+id/fechaBtn_cr"
+            android:background="@color/divider"
+            android:textColor="@color/primary_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="fill_vertical"
             android:layout_marginTop="@dimen/margin_top_texto"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:text="@string/fecha"></Button>
 
         <TextView
+            android:textColor="@color/primary_text"
             android:id="@+id/fecha_ex_cr"
+            android:paddingLeft="50dp"
+            android:textSize="@dimen/nombreGrande"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
+            android:layout_height="match_parent"
+            android:gravity="fill_vertical"
             android:layout_weight="1"></TextView>
     </LinearLayout>
     <LinearLayout
@@ -82,6 +93,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
+            android:textColor="@color/primary_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/area_de_trabajo"
@@ -90,6 +102,7 @@
             android:layout_gravity="fill"
             android:layout_marginTop="@dimen/nombreGrande"></TextView>
         <Spinner
+            android:textColor="@color/primary_text"
             android:id="@+id/area_spinn"
             android:layout_width="match_parent"
             android:layout_weight="1"
@@ -105,6 +118,7 @@
         android:orientation="horizontal">
         <TextView
             android:layout_width="match_parent"
+            android:textColor="@color/primary_text"
             android:layout_height="match_parent"
             android:text="@string/tiene_sintomas"
             android:textSize="@dimen/nombreGrande"
@@ -112,6 +126,7 @@
             android:layout_marginTop="@dimen/margin_top_texto"></TextView>
 
         <Switch
+            android:textColor="@color/primary_text"
             android:id="@+id/sint_sw_cr"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -122,12 +137,14 @@
             android:textOn="Si"></Switch>
     </LinearLayout>
     <TextView
+        android:textColor="@color/primary_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/nombreGrande"
         android:text="@string/temperatura"
         android:layout_marginTop="@dimen/margin_top_texto"></TextView>
     <EditText
+        android:textColor="@color/primary_text"
         android:id="@+id/temp_pac_cr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -138,6 +155,7 @@
         android:orientation="horizontal">
         <TextView
             android:layout_width="match_parent"
+            android:textColor="@color/primary_text"
             android:layout_height="match_parent"
             android:text="@string/tiene_tos"
             android:textSize="@dimen/nombreGrande"
@@ -156,18 +174,22 @@
             android:textOn="Si"></Switch>
     </LinearLayout>
     <TextView
+        android:textColor="@color/primary_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/nombreGrande"
         android:text="@string/presi_n_arterial"
         android:layout_marginTop="@dimen/margin_top_texto"></TextView>
     <EditText
+        android:textColor="@color/primary_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/presion_pac_txt_cr"
         android:inputType="number|none"></EditText>
 
     <Button
+        android:textColor="@color/primary_text"
+        android:background="@color/divider"
         android:id="@+id/agregar_paciente_cr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

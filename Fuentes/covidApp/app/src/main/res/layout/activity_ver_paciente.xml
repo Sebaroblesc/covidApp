@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".VerPacienteActivity"
-    android:orientation="vertical"
-    android:background="@color/colorPrimary">
+    android:orientation="vertical">
 <include layout="@layout/toolbar"></include>
     <ScrollView
         android:layout_width="match_parent"
@@ -24,13 +23,18 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="@dimen/margin_top_texto">
+
         <TextView
-            android:text="Rut paciente"
-            android:textSize="@dimen/letra_ver_pac"
+            android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"></TextView>
+            android:background="@color/primary_light"
+            android:gravity="center_horizontal"
+            android:text="Rut paciente"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/letra_ver_pac"></TextView>
         <TextView
+            android:textColor="@color/secondary_text"
             android:id="@+id/rut_view"
             android:textSize="@dimen/letra_ver_pac"
             android:layout_width="match_parent"
@@ -43,8 +47,11 @@
         android:orientation="vertical"
         android:layout_marginTop="@dimen/margin_top_texto">
         <TextView
+            android:textColor="@color/primary_text"
             android:text="Nombre"
+            android:background="@color/primary_light"
             android:textSize="@dimen/letra_ver_pac"
+            android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"></TextView>
@@ -53,6 +60,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
+                android:textColor="@color/secondary_text"
                 android:id="@+id/nombre_view"
                 android:textSize="@dimen/letra_ver_pac"
                 android:layout_width="match_parent"
@@ -60,6 +68,7 @@
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content"></TextView>
             <TextView
+                android:textColor="@color/secondary_text"
                 android:id="@+id/apellido_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -76,12 +85,16 @@
     android:orientation="vertical"
     >
     <TextView
+        android:textColor="@color/primary_text"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Fecha"
+        android:background="@color/primary_light"
         android:textSize="@dimen/letra_ver_pac"
         android:gravity="center_horizontal"></TextView>
     <TextView
+        android:textColor="@color/secondary_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/fecha_view"
@@ -96,12 +109,16 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/primary_text"
             android:text="Area de trabajo"
+            android:textStyle="bold"
+            android:background="@color/primary_light"
             android:textSize="@dimen/letra_ver_pac"
             android:gravity="center_horizontal"></TextView>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/secondary_text"
             android:id="@+id/area_view"
             android:gravity="center_horizontal"
             android:textSize="@dimen/letra_ver_pac"></TextView>
@@ -114,14 +131,18 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/primary_text"
             android:text="¿Tiene sintomas?"
+            android:textStyle="bold"
             android:textSize="@dimen/letra_ver_pac"
+            android:background="@color/primary_light"
             android:gravity="center_horizontal"></TextView>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/sintomas_view"
             android:gravity="center_horizontal"
+            android:textColor="@color/secondary_text"
             android:textSize="@dimen/letra_ver_pac"></TextView>
     </LinearLayout>
 
@@ -133,13 +154,17 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/primary_text"
             android:text="¿Tiene tos?"
+            android:textStyle="bold"
+            android:background="@color/primary_light"
             android:textSize="@dimen/letra_ver_pac"
             android:gravity="center_horizontal"></TextView>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tos_view"
+            android:textColor="@color/secondary_text"
             android:gravity="center_horizontal"
             android:textSize="@dimen/letra_ver_pac"></TextView>
     </LinearLayout>
@@ -151,13 +176,17 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/primary_text"
             android:text="Presión"
+            android:textStyle="bold"
+            android:background="@color/primary_light"
             android:textSize="@dimen/letra_ver_pac"
             android:gravity="center_horizontal"></TextView>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/presion_view"
+            android:textColor="@color/secondary_text"
             android:gravity="center_horizontal"
             android:textSize="@dimen/letra_ver_pac"></TextView>
     </LinearLayout>
@@ -169,13 +198,17 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/primary_text"
             android:text="Temperatura"
+            android:textStyle="bold"
             android:textSize="@dimen/letra_ver_pac"
+            android:background="@color/primary_light"
             android:gravity="center_horizontal"></TextView>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/temp_view"
+            android:textColor="@color/secondary_text"
             android:gravity="center_horizontal"
             android:textSize="@dimen/letra_ver_pac"></TextView>
     </LinearLayout>

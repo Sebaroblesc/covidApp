@@ -8,4 +8,5 @@
     <dimen name="nombreGrande">20sp</dimen>
     <dimen name="margin_boton_float">15dp</dimen>
     <dimen name="letra_ver_pac">30sp</dimen>
+    <dimen name="margin_top_center">150dp</dimen>
 </resources>

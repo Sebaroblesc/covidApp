@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:minHeight="?attr/actionBarSize"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorPrimary"
     app:popupTheme="@style/Theme.AppCompat.Light"
     android:id="@+id/toolbar"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
@@ -13,7 +13,7 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center"
+    android:gravity="center_horizontal"
     android:orientation="horizontal">
     <ImageView
         android:layout_width="70dp"
