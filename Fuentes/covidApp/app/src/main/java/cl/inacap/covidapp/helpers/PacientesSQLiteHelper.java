@@ -15,9 +15,9 @@ public class PacientesSQLiteHelper extends SQLiteOpenHelper {
             ",apellido TEXT" +
             ",fechaExamen TEXT" +
             ",areaTrabajo TEXT" +
-            ",sintomas INTEGER" +
+            ",sintomas INTEGER DEFAULT 0" +
             ",temperatura INTEGER" +
-            ",tos INTEGER" +
+            ",tos INTEGER DEFAULT 0" +
             ",presion INTEGER)";
 
 

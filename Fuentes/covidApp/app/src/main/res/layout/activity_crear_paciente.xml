@@ -82,19 +82,41 @@
         android:orientation="horizontal">
         <TextView
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/area_de_trabajo"
+            android:textSize="@dimen/nombreGrande"
+            android:layout_weight="1"
+            android:layout_gravity="fill"
+            android:layout_marginTop="@dimen/nombreGrande"></TextView>
+        <Spinner
+            android:id="@+id/area_spinn"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"></Spinner>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/tiene_sintomas"
             android:textSize="@dimen/nombreGrande"
             android:layout_weight="1"
             android:layout_marginTop="@dimen/margin_top_texto"></TextView>
-        <EditText
+        <Switch
             android:id="@+id/sint_sw_cr"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:inputType="number"
             android:gravity="center_vertical">
-        </EditText>
+        </Switch>
     </LinearLayout>
     <TextView
         android:layout_width="match_parent"
@@ -118,14 +140,14 @@
             android:textSize="@dimen/nombreGrande"
             android:layout_weight="1"
             android:layout_marginTop="@dimen/margin_top_texto"></TextView>
-        <EditText
+        <Switch
             android:id="@+id/tos_sw_cr"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:inputType="number"
             android:gravity="center_vertical">
-        </EditText>
+        </Switch>
     </LinearLayout>
     <TextView
         android:layout_width="match_parent"

@@ -6,10 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
@@ -38,6 +41,10 @@ public class ExamenesArrayAdapter extends ArrayAdapter<Paciente> {
         TextView nombreTv = fila.findViewById(R.id.nombre_lv);
         TextView apellidoTv = fila.findViewById(R.id.apellido_lv);
         TextView fechaTv = fila.findViewById(R.id.fecha_lv);
+        ImageView iconoTv = fila.findViewById(R.id.img_positivo_lv);
+
+
+
 
         Paciente actual = pacientes.get(position);
 
@@ -45,6 +52,7 @@ public class ExamenesArrayAdapter extends ArrayAdapter<Paciente> {
         nombreTv.setText(actual.getNombre());
         apellidoTv.setText(actual.getApellido());
         fechaTv.setText(actual.getFechaExamen());
+        
         return fila;
     }
 }

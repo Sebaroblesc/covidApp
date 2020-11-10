@@ -11,4 +11,5 @@
     <string name="temperatura">Temperatura</string>
     <string name="tiene_tos">¿Tiene tos?</string>
     <string name="presi_n_arterial">Presión arterial</string>
+    <string name="area_de_trabajo">Area de Trabajo</string>
 </resources>

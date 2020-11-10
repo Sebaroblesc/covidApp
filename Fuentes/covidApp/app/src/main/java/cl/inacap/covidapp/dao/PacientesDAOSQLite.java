@@ -35,9 +35,10 @@ public class PacientesDAOSQLite implements PacientesDAO {
                         p.setApellido(c.getString(3));
                         p.setFechaExamen(c.getString(4));
                         p.setAreaTrabajo(c.getString(5));
-                        p.setSintomas(c.getInt(6));
+                      //  p.setSintomas(c.getInt(6) > 0);
+
                         p.setTemperatura(c.getInt(7));
-                        p.setTos(c.getInt(8));
+                      //  p.setTos(c.getInt(8) > 0);
                         p.setPresion(c.getInt(9));
                         pacientes.add(p);
                     }while(c.moveToNext());
@@ -56,8 +57,8 @@ public class PacientesDAOSQLite implements PacientesDAO {
     public Paciente save(Paciente p) {
         SQLiteDatabase writer = this.pacHelper.getWritableDatabase();
         String sql = String.format("INSERT INTO pacientes(rut,nombre,apellido,fechaExamen,areaTrabajo,sintomas,temperatura,tos,presion)" +
-                " VALUES ('%s','%s','%s','%s','%s','%d','%d','%d','%d')", p.getRut(), p.getNombre(),p.getApellido(),p.getFechaExamen(),
-                        p.getAreaTrabajo(),p.getSintomas(),p.getTemperatura(),p.getTos(),p.getPresion());
+                " VALUES ('%s','%s','%s','%s','%s','%b','%f','%b','%d')", p.getRut(), p.getNombre(),p.getApellido(),p.getFechaExamen(),
+                        p.getAreaTrabajo(),p.isSintomas(),p.getTemperatura(),p.isTos(),p.getPresion());
 
         writer.execSQL(sql);
          writer.close();
