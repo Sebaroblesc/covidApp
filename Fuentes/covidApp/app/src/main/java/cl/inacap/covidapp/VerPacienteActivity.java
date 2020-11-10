@@ -54,10 +54,18 @@ public class VerPacienteActivity extends AppCompatActivity {
             this.apellidoTxt.setText(paciente.getApellido());
             this.areaTxt.setText(paciente.getAreaTrabajo());
             this.fechaTxt.setText(paciente.getFechaExamen());
-            this.sintomasTxt.setText("Sintomas: " + paciente.isSintomas());
-            this.tosTxt.setText("Tos: " + paciente.isTos());
-            this.tempTxt.setText(paciente.getTemperatura()+ "°C");
-            this.presionTxt.setText("Presión" + paciente.getPresion());
+            if(paciente.isSintomas()){
+                this.sintomasTxt.setText("Sí");
+            }else{
+                this.sintomasTxt.setText("No");
+            }
+            if(paciente.isTos()){
+                this.tosTxt.setText("Sí");
+            }else{
+                this.tosTxt.setText("No");
+            }
+            this.tempTxt.setText(paciente.getTemperatura() + "°C.");
+            this.presionTxt.setText(paciente.getPresion()+".");
         }
     }
 }

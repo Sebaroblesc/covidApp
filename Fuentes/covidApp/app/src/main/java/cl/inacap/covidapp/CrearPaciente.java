@@ -28,7 +28,7 @@ import cl.inacap.covidapp.dao.PacientesDAO;
 import cl.inacap.covidapp.dao.PacientesDAOSQLite;
 import cl.inacap.covidapp.dto.Paciente;
 
-public class CrearPaciente extends AppCompatActivity {
+public class CrearPaciente extends AppCompatActivity{
 
     TextView mTv;
     Button mBtn;
@@ -49,8 +49,7 @@ public class CrearPaciente extends AppCompatActivity {
     int dia;
     int mes;
     int anio;
-    int estadoSint = 0;
-    int estadoTos = 0;
+
     String[] area = {"Atención a público", "Otro"};
 
 
@@ -81,6 +80,7 @@ public class CrearPaciente extends AppCompatActivity {
         ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, area);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         areaSpin.setAdapter(adapter2);
+
 
 
         mTv = (TextView) findViewById(R.id.fecha_ex_cr);
@@ -148,13 +148,6 @@ public class CrearPaciente extends AppCompatActivity {
                     p.setAreaTrabajo(areaSpin.getSelectedItem().toString().trim());
                 }
 
-
-                p.setPresion(Integer.parseInt(presionTxt.getText().toString()));
-
-
-                p.setTemperatura(Integer.parseInt(tempTxt.getText().toString()));
-
-
                 if(sintomasTxt.isChecked()){
                     p.setSintomas(true);
                 }else{
@@ -167,10 +160,25 @@ public class CrearPaciente extends AppCompatActivity {
                     p.setTos(false);
                 }
 
+
+                if((Integer.parseInt(presionTxt.getText().toString()) <= 0)){
+                    errores.add("Debe ingresar presión");
+                }else{
+                    p.setPresion(Integer.parseInt(presionTxt.getText().toString()));
+                }
+
+                if((Float.parseFloat(tempTxt.getText().toString()) <= 20)){
+                    errores.add("Debe ingresar temperatura");
+                }else{
+                    p.setTemperatura(Float.parseFloat(tempTxt.getText().toString()));
+                }
+
+
+
                 if(errores.isEmpty()){
                     pacDAO.save(p);
                     startActivity(new Intent(CrearPaciente.this, PrincipalActivity.class));
-                    Toast.makeText(CrearPaciente.this, "Paciente Agregado!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CrearPaciente.this, "Paciente Agregado!", Toast.LENGTH_LONG).show();
                 }else{
                     String tempString ="";
                     for(int i = 0 ; i < errores.size(); i++ ){
@@ -183,4 +191,6 @@ public class CrearPaciente extends AppCompatActivity {
         });
 
     }
-}
+
+
+    }

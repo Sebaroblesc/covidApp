@@ -35,7 +35,7 @@ public class ExamenesArrayAdapter extends ArrayAdapter<Paciente> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = this.activity.getLayoutInflater();
-        View fila = inflater.inflate(R.layout.examenes_list, null,true);
+        View fila = inflater.inflate(R.layout.examenes_list, null, true);
 
         TextView rutTv = fila.findViewById(R.id.rut_lv);
         TextView nombreTv = fila.findViewById(R.id.nombre_lv);
@@ -46,13 +46,17 @@ public class ExamenesArrayAdapter extends ArrayAdapter<Paciente> {
 
 
 
+
         Paciente actual = pacientes.get(position);
 
         rutTv.setText(actual.getRut());
         nombreTv.setText(actual.getNombre());
         apellidoTv.setText(actual.getApellido());
         fechaTv.setText(actual.getFechaExamen());
-        
+        if(pacientes.get(position).isSintomas()){
+            iconoTv.setImageResource(R.drawable.infected);
+        }
+
         return fila;
     }
 }

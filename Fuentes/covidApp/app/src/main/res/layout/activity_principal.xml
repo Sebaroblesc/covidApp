@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PrincipalActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
 
     <include
         layout="@layout/toolbar"></include>
@@ -13,7 +14,7 @@
     <ListView
         android:id="@+id/examenes_lv"
         android:layout_width="match_parent"
-        android:layout_height="367dp"></ListView>
+        android:layout_height="306dp"></ListView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"

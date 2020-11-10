@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/colorPrimary">
 
     <include
         layout="@layout/toolbar"
@@ -109,14 +110,16 @@
             android:textSize="@dimen/nombreGrande"
             android:layout_weight="1"
             android:layout_marginTop="@dimen/margin_top_texto"></TextView>
+
         <Switch
             android:id="@+id/sint_sw_cr"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:inputType="number"
-            android:gravity="center_vertical">
-        </Switch>
+            android:gravity="center_vertical"
+            android:showText="true"
+            android:textOff="No"
+            android:textOn="Si"></Switch>
     </LinearLayout>
     <TextView
         android:layout_width="match_parent"
@@ -140,14 +143,17 @@
             android:textSize="@dimen/nombreGrande"
             android:layout_weight="1"
             android:layout_marginTop="@dimen/margin_top_texto"></TextView>
+
         <Switch
             android:id="@+id/tos_sw_cr"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:inputType="number"
-            android:gravity="center_vertical">
-        </Switch>
+            android:checked="false"
+            android:gravity="center_vertical"
+            android:showText="true"
+            android:textOff="No"
+            android:textOn="Si"></Switch>
     </LinearLayout>
     <TextView
         android:layout_width="match_parent"
