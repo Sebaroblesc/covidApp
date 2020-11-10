@@ -46,9 +46,9 @@ public class CrearPaciente extends AppCompatActivity{
     private PacientesDAO pacDAO = new PacientesDAOSQLite(this);
     Calendar c;
     DatePickerDialog dpd;
-    int dia;
-    int mes;
-    int anio;
+
+
+
 
     String[] area = {"Atención a público", "Otro"};
 
@@ -87,24 +87,19 @@ public class CrearPaciente extends AppCompatActivity{
         mBtn = (Button) findViewById(R.id.fechaBtn_cr);
 
         mBtn.setOnClickListener(new View.OnClickListener() {
-
-
             @Override
             public void onClick(View v) {
-
                 c = Calendar.getInstance();
-
-
-                int dia = c.get(Calendar.DAY_OF_MONTH);
-                int mes = c.get(Calendar.MONTH);
-                int anio = c.get(Calendar.YEAR);
-
+                int day = c.get(Calendar.DAY_OF_MONTH);
+                int month = c.get(Calendar.MONTH);
+                int year = c.get(Calendar.YEAR);
                 dpd = new DatePickerDialog(CrearPaciente.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
-                    public void onDateSet(DatePicker view, int mAnio, int mMes, int mDia) {
-                        mTv.setText(mDia + "/" + (mMes + 1) + "/" + mAnio);
+                    public void onDateSet(DatePicker view, int mYear, int mMonth, int mDay) {
+                        mTv.setText(mDay + "/" + (mMonth + 1) + "/" + mYear);
                     }
-                }, dia , mes, anio);
+                }, year, month,day);
+                dpd.getDatePicker().setMinDate(System.currentTimeMillis());
                 dpd.show();
             }
         });
@@ -161,17 +156,31 @@ public class CrearPaciente extends AppCompatActivity{
                 }
 
 
-                if((Integer.parseInt(presionTxt.getText().toString()) <= 0)){
-                    errores.add("Debe ingresar presión");
-                }else{
-                    p.setPresion(Integer.parseInt(presionTxt.getText().toString()));
+                float temp = 0;
+                try{
+                    temp = Float.valueOf(tempTxt.getText().toString());
+                    if(temp <= 20){
+                        errores.add("Temperatura menor a 20°C");
+                    }else{
+                        p.setTemperatura(Float.parseFloat(tempTxt.getText().toString()));
+                    }
+                }catch(NumberFormatException e){
+                    errores.add("Temperatura inválida");
                 }
 
-                if((Float.parseFloat(tempTxt.getText().toString()) <= 20)){
-                    errores.add("Debe ingresar temperatura");
-                }else{
-                    p.setTemperatura(Float.parseFloat(tempTxt.getText().toString()));
+                float presion = 0;
+                try{
+                    presion = Integer.valueOf(tempTxt.getText().toString());
+                    if(presion == 0){
+                        errores.add("Debe ingresar presión");
+                    }else{
+                        p.setPresion(Integer.parseInt(presionTxt.getText().toString()));
+                    }
+                }catch(NumberFormatException e){
+                    errores.add("Presión inválida");
                 }
+
+
 
 
 
