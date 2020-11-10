@@ -53,7 +53,7 @@ public class ExamenesArrayAdapter extends ArrayAdapter<Paciente> {
         nombreTv.setText(actual.getNombre());
         apellidoTv.setText(actual.getApellido());
         fechaTv.setText(actual.getFechaExamen());
-        if(pacientes.get(position).isSintomas()){
+        if(pacientes.get(position).isSintomas() && pacientes.get(position).isTos() && pacientes.get(position).getTemperatura() >= 37){
             iconoTv.setImageResource(R.drawable.infected);
         }
 

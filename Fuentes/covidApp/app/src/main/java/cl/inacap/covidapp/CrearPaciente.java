@@ -50,6 +50,7 @@ public class CrearPaciente extends AppCompatActivity{
 
 
 
+
     String[] area = {"Atención a público", "Otro"};
 
 
@@ -168,9 +169,9 @@ public class CrearPaciente extends AppCompatActivity{
                     errores.add("Temperatura inválida");
                 }
 
-                float presion = 0;
+                int presion = 0;
                 try{
-                    presion = Integer.valueOf(tempTxt.getText().toString());
+                    presion = Integer.valueOf(presionTxt.getText().toString());
                     if(presion == 0){
                         errores.add("Debe ingresar presión");
                     }else{

@@ -36,15 +36,12 @@ public class PacientesDAOSQLite implements PacientesDAO {
                         p.setApellido(c.getString(3));
                         p.setFechaExamen(c.getString(4));
                         p.setAreaTrabajo(c.getString(5));
-                     //   p.setSintomas(c.getInt(6) > 0);
                         if(c.getInt(6) == 1){
                             p.setSintomas(true);
                         }else{
                             p.setSintomas(false);
                         }
-
-                        p.setTemperatura(c.getInt(7));
-                       // p.setTos(c.getInt(8) > 0);
+                        p.setTemperatura(c.getFloat(7));
                         if(c.getInt(8) == 1){
                             p.setTos(true);
                         }else{

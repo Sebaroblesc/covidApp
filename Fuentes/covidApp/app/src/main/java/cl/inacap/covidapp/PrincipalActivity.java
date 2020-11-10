@@ -32,6 +32,8 @@ public class PrincipalActivity extends AppCompatActivity {
         this.setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
         this.setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
         this.agregarBtn = findViewById(R.id.agregar_btn_fb);
+        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        this.getSupportActionBar().setDisplayShowHomeEnabled(true);
         this.agregarBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,6 +41,11 @@ public class PrincipalActivity extends AppCompatActivity {
             }
         });
 
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     @Override

@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.text.DecimalFormat;
+
 import cl.inacap.covidapp.dto.Paciente;
 
 public class VerPacienteActivity extends AppCompatActivity {
@@ -22,6 +24,7 @@ public class VerPacienteActivity extends AppCompatActivity {
     private TextView tosTxt;
     private TextView tempTxt;
     private TextView presionTxt;
+    DecimalFormat precision = new DecimalFormat("0.0");
 
 
     @Override
@@ -64,8 +67,11 @@ public class VerPacienteActivity extends AppCompatActivity {
             }else{
                 this.tosTxt.setText("No");
             }
-            this.tempTxt.setText(paciente.getTemperatura() + "°C.");
-            this.presionTxt.setText(paciente.getPresion()+".");
+
+            float temp1 = paciente.getTemperatura();
+            this.tempTxt.setText(String.format("%.1f",temp1));
+
+            this.presionTxt.setText(paciente.getPresion()+"");
         }
     }
 }
