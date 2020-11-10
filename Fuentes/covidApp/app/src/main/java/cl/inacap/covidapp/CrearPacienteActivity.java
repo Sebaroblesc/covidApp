@@ -1,17 +1,14 @@
 package cl.inacap.covidapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SwitchCompat;
 import androidx.appcompat.widget.Toolbar;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.InputType;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -22,13 +19,12 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import java.util.TimeZone;
 
 import cl.inacap.covidapp.dao.PacientesDAO;
 import cl.inacap.covidapp.dao.PacientesDAOSQLite;
 import cl.inacap.covidapp.dto.Paciente;
 
-public class CrearPaciente extends AppCompatActivity{
+public class CrearPacienteActivity extends AppCompatActivity{
 
     TextView mTv;
     Button mBtn;
@@ -94,7 +90,7 @@ public class CrearPaciente extends AppCompatActivity{
                 int day = c.get(Calendar.DAY_OF_MONTH);
                 int month = c.get(Calendar.MONTH);
                 int year = c.get(Calendar.YEAR);
-                dpd = new DatePickerDialog(CrearPaciente.this, new DatePickerDialog.OnDateSetListener() {
+                dpd = new DatePickerDialog(CrearPacienteActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int mYear, int mMonth, int mDay) {
                         mTv.setText(mDay + "/" + (mMonth + 1) + "/" + mYear);
@@ -187,8 +183,8 @@ public class CrearPaciente extends AppCompatActivity{
 
                 if(errores.isEmpty()){
                     pacDAO.save(p);
-                    startActivity(new Intent(CrearPaciente.this, PrincipalActivity.class));
-                    Toast.makeText(CrearPaciente.this, "Paciente Agregado!", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(CrearPacienteActivity.this, PrincipalActivity.class));
+                    Toast.makeText(CrearPacienteActivity.this, "Paciente Agregado!", Toast.LENGTH_LONG).show();
                 }else{
                     String tempString ="";
                     for(int i = 0 ; i < errores.size(); i++ ){

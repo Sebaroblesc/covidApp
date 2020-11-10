@@ -37,7 +37,7 @@ public class PrincipalActivity extends AppCompatActivity {
         this.agregarBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(PrincipalActivity.this, CrearPaciente.class));
+                startActivity(new Intent(PrincipalActivity.this, CrearPacienteActivity.class));
             }
         });
 
