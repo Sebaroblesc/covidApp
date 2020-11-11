@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         this.nombreTxt = findViewById(R.id.nombreUsuario);
         this.passwordTxt = findViewById(R.id.password);
         this.login = findViewById(R.id.iniciarBtn);
-
+        nombreTxt.setBackgroundResource(R.drawable.textview_border);
 
 
 
@@ -33,13 +33,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
              public void onClick(View v) {
                 List<String> errores = new ArrayList<>();
-                if(nombreTxt.getText().toString().matches("^[0-9]+-[0-9kK]{1}$")){
 
-                }else{
-                    nombreTxt.setError("Debe Ingresar RUT!");
-                    errores.add("Rut inválido.");
+                if(nombreTxt.getText().toString().isEmpty()) {
+                    nombreTxt.setBackgroundResource(R.drawable.textview_border_error);
+                    errores.add("Debe ingresar nombre de usuario");
+                }else if(!nombreTxt.getText().toString().matches("^[0-9]{7,8}+-[0-9kK]{1}$")) {
+                    nombreTxt.setBackgroundResource(R.drawable.textview_border);
+                    errores.add("Rut inválido");
                 }
-
 
                 String input = nombreTxt.getText().toString();
                 String ultimosSeis = "";
@@ -57,13 +58,19 @@ public class MainActivity extends AppCompatActivity {
                 if(passwordTxt.getText().toString().equals(ultimosCuatro)){
 
                 }else{
-                    passwordTxt.setError("Password inválida!");
                     errores.add("Contraseña inválida");
                 }
 
                 if(errores.isEmpty()) {
                     startActivity(new Intent(MainActivity.this, PrincipalActivity.class));
+                }else{
+                String tempString ="";
+                for(int i = 0 ; i < errores.size(); i++ ){
+                    tempString = tempString + " \n" + errores.get(i);
                 }
+                tempString = tempString.substring(2);
+                Toast.makeText(getApplicationContext(), tempString, Toast.LENGTH_LONG).show();
+            }
              }
 
 

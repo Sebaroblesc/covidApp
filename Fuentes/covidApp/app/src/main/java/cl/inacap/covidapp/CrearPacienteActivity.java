@@ -112,7 +112,7 @@ public class CrearPacienteActivity extends AppCompatActivity{
             public void onClick(View v) {
                 List<String> errores = new ArrayList<>();
                 Paciente p = new Paciente();
-                if(rutTxt.getText().toString().matches("^[0-9]+-[0-9kK]{1}$")) {
+                if(rutTxt.getText().toString().matches("^[0-9]{7,8}+-[0-9kK]{1}$")) {
                     p.setRut(rutTxt.getText().toString());
                 }else{
                     errores.add("Rut inválido");
@@ -184,11 +184,10 @@ public class CrearPacienteActivity extends AppCompatActivity{
                 if(errores.isEmpty()){
                     pacDAO.save(p);
                     startActivity(new Intent(CrearPacienteActivity.this, PrincipalActivity.class));
-                    Toast.makeText(CrearPacienteActivity.this, "Paciente Agregado!", Toast.LENGTH_LONG).show();
                 }else{
                     String tempString ="";
                     for(int i = 0 ; i < errores.size(); i++ ){
-                        tempString = tempString + ". " + errores.get(i);
+                        tempString = tempString + " \n" + errores.get(i);
                     }
                     tempString = tempString.substring(2);
                     Toast.makeText(getApplicationContext(), tempString, Toast.LENGTH_LONG).show();
