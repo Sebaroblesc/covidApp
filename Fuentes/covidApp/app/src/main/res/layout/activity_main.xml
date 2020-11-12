@@ -31,7 +31,6 @@
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
          android:background="@drawable/textview_border"
-         android:hint="Rut"
          android:textColor="@color/secondary_text"
          android:gravity="center_horizontal"
          android:textSize="@dimen/etiqueta_app_size"></EditText>
@@ -57,7 +56,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:hint="4 últimos dígitos"
             android:background="@drawable/textview_border"
             android:inputType="numberPassword"
             android:textSize="@dimen/etiqueta_app_size"></EditText>

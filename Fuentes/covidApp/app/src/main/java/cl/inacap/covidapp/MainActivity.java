@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                     errores.add("Debe ingresar nombre de usuario");
                 }else if(!nombreTxt.getText().toString().matches("^[0-9]{7,8}+-[0-9kK]{1}$")) {
                     nombreTxt.setBackgroundResource(R.drawable.textview_border);
-                    errores.add("Rut inválido");
+                    errores.add("Usuario inválido");
                 }
 
                 String input = nombreTxt.getText().toString();
